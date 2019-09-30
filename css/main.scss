@@ -1,0 +1,18 @@
+body{
+	font-family: 'Lato', sans-serif;
+}
+
+.lighting-letters{
+	font-weight: 300;
+    font-size: 4rem;
+    display: none;
+}
+
+.lighting-letter{
+	transition: all 0.2s linear;
+	opacity: 0;
+}
+
+.l-show{
+	opacity: 1 !important;
+}
