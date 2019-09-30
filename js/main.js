@@ -69,7 +69,7 @@ addEventListener('load', function () {
 
 		while ( tempArray.length > 0 ) {
 			
-			var randomIndex = Math.round( Math.random() * (tempArray.length - 1) );
+			var randomIndex = Math.floor( Math.random() * tempArray.length );
 			newArray.push( tempArray[randomIndex] );
 			tempArray.splice(randomIndex, 1);
 		}
