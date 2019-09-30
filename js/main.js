@@ -11,60 +11,70 @@ addEventListener('load', function () {
 		$lls.show();
 
 		$(letters).each(function () {
-			// console.log(this);
 			var letter = this;
 			var letterSpan = '<span class="lighting-letter">' + letter + '</span>';
 			$lls.append(letterSpan);
 		});
 
 		var $ll = $('.lighting-letter');
-		var time = 0;
-		var count = 0;
-		var timeRange = 50;
-		var maxSpeed = timeRange;
-		var intervalTime = 50;
-		var timeoutToHide = 300 / intervalTime;
 
-		$ll.each(function () {
-			this.timeToShow = Math.round( Math.random() * timeRange );
-			this.speed = Math.round( Math.random() * 5 );
-			// console.log(this.timeToShow);
+		var intervalTime = 10;
+		var minStartInterval = 80;
+		var minEndInterval = Math.floor( minStartInterval / 1.1 );
+		var time = minStartInterval - 1;
+		var lettersVisible = 0;
+
+		$ll = $( shuffleArray($ll) );
+
+		$ll.each(function (index) {
+			// this.interval = Math.floor( Math.random() * 30 ) + minStartInterval;
+			this.interval = minStartInterval + index * 2;
 		});
-		
-		var maxSpeedCount;
 
 		var interval = setInterval(function () {
 
-			console.log('interval running...');
+			console.log( 'interval running... (' + time + ')' );
 			
-			maxSpeedCount = 0;
-
 			$ll.each(function () {
-				if ( this.timeToShow == time ) {
-					$(this).addClass('l-show');
-				}
-				else if (  this.timeToShow == Number(time - timeoutToHide) 
-						|| this.timeToShow == Number(time + timeRange - timeoutToHide) ) {
-					$(this).removeClass('l-show');
-				}
-				this.speed++;
 
-				if ( this.speed > maxSpeed ) {
+				if ( time % this.interval == 0 ) {
 					$(this).addClass('l-show');
-					maxSpeedCount++;
+
+					if ( this.interval <= minEndInterval ) {
+						this.interval = 0;
+						lettersVisible++;
+					}
+				}
+				else if ( (time > this.interval) && ((time - Math.round(this.interval / 5)) % this.interval == 0) ) {
+					$(this).removeClass('l-show');
+					this.interval = Math.floor(this.interval / 2);
 				}
 			});
 
 			time++;
-			count++;
-			if ( time > timeRange - 1 ) time = 0;
-			// if ( count > 30 ) clearInterval(interval);
-			if ( maxSpeedCount == $ll.length ) {
-				clearInterval(interval);
-				console.log('interval stopped');
-			}
-		}, intervalTime);
 
+			if ( lettersVisible >= $ll.length || time > intervalTime * 100 ) {
+				clearInterval(interval);
+				console.log( 'interval cleared' );
+			}
+
+		}, intervalTime);
+	}
+
+
+	function shuffleArray(array) {
+		
+		var tempArray = array;
+		var newArray = [];
+
+		while ( tempArray.length > 0 ) {
+			
+			var randomIndex = Math.round( Math.random() * (tempArray.length - 1) );
+			newArray.push( tempArray[randomIndex] );
+			tempArray.splice(randomIndex, 1);
+		}
+		// console.log( newArray );
+		return newArray;
 	}
 
 

@@ -7,7 +7,7 @@ body {
   display: none; }
 
 .lighting-letter {
-  transition: all 0.2s linear;
+  transition: all 0.1s linear;
   opacity: 0; }
 
 .l-show {
