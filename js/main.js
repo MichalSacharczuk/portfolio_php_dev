@@ -92,4 +92,6 @@ addEventListener('load', function () {
 
 	lightingLetters();
 
+
+	$('.navbar-brand').click( lightingLetters );
 })

@@ -1,4 +1,10 @@
+@import "variables";
 @import "mixins";
+@import "bootstrap_overwrite_classes";
+
+
+//**********
+
 
 body{
 	font-family: 'Lato', sans-serif;
@@ -9,7 +15,7 @@ body{
 	background-image: url(../img/bg-code_clean_darker.png);
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 100vh;
+	height: 100%;
 	width: 100%;
 	z-index: -1;
 }
@@ -63,4 +69,24 @@ body{
 
 .l-show{
 	opacity: 1 !important;
+}
+
+.my-navbar{
+	position: fixed;
+	top: 0;
+	background-color: $secondary;
+	width: 100%;
+	z-index: 1;
+
+	// * { 
+	// 	color: white;
+	// }
+}
+
+$navbar-height: 56px;
+.vh-minus-nav{
+	position: relative;
+	// height: 100vh;
+	height: calc(100vh - #{$navbar-height});
+	margin-top: $navbar-height;
 }
