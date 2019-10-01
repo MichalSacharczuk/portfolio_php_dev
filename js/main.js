@@ -1,5 +1,33 @@
 addEventListener('load', function () {
+
+
+	function shuffleArray(array) {
+		
+		var tempArray = array;
+		var newArray = [];
+
+		while ( tempArray.length > 0 ) {
+			
+			var randomIndex = Math.floor( Math.random() * tempArray.length );
+			newArray.push( tempArray[randomIndex] );
+			tempArray.splice(randomIndex, 1);
+		}
+		return newArray;
+	}
 	
+	function joinLetters() {
+		
+		var $ll = $('.lighting-letter');
+		var letters = [];
+
+		$ll.each(function () {
+			letters.push( $(this).text() );
+		});
+
+		letters = letters.join('');
+
+		$('.lighting-letters').html(letters);
+	}
 
 	function lightingLetters() {
 		
@@ -27,13 +55,12 @@ addEventListener('load', function () {
 		$ll = $( shuffleArray($ll) );
 
 		$ll.each(function (index) {
-			// this.interval = Math.floor( Math.random() * 30 ) + minStartInterval;
 			this.interval = minStartInterval + index * 2;
 		});
 
-		var interval = setInterval(function () {
+		var lightingLettersInterval = setInterval(function () {
 
-			console.log( 'interval running... (' + time + ')' );
+			// console.log( 'interval running... (' + time + ')' );
 			
 			$ll.each(function () {
 
@@ -54,27 +81,12 @@ addEventListener('load', function () {
 			time++;
 
 			if ( lettersVisible >= $ll.length || time > intervalTime * 100 ) {
-				clearInterval(interval);
+				clearInterval(lightingLettersInterval);
+				joinLetters();
 				console.log( 'interval cleared' );
 			}
 
 		}, intervalTime);
-	}
-
-
-	function shuffleArray(array) {
-		
-		var tempArray = array;
-		var newArray = [];
-
-		while ( tempArray.length > 0 ) {
-			
-			var randomIndex = Math.floor( Math.random() * tempArray.length );
-			newArray.push( tempArray[randomIndex] );
-			tempArray.splice(randomIndex, 1);
-		}
-		// console.log( newArray );
-		return newArray;
 	}
 
 
