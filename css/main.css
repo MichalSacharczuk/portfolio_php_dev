@@ -1,12 +1,46 @@
 body {
   font-family: 'Lato', sans-serif; }
 
+.bg-img {
+  position: absolute;
+  background-image: url(../img/bg-code_clean_darker.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  z-index: -1; }
+
+#bg-code {
+  background-image: url(../img/bg-code_clean.png);
+  background-position: center; }
+
+#bg-lines {
+  background-image: url(../img/lines.png);
+  background-position: left; }
+
+#bg-code-with-lines {
+  background-image: url(../img/bg-code_with_lines.png);
+  background-position: left; }
+
 .lighting-letters {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 200;
+  font-weight: 100;
   letter-spacing: -1px;
   font-size: 4rem;
-  display: none; }
+  display: none;
+  color: white;
+  margin-left: auto;
+  width: min-content;
+  margin-right: 5rem; }
+  @media screen and (max-width: 767px) {
+    .lighting-letters {
+      font-size: 3rem;
+      margin-right: 3rem; } }
+  @media screen and (max-width: 575px) {
+    .lighting-letters {
+      font-size: 2.5rem;
+      font-weight: 200;
+      margin-right: 2rem; } }
 
 .lighting-letter {
   transition: all 0.1s linear;

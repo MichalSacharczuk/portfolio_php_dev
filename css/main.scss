@@ -1,13 +1,59 @@
+@import "mixins";
+
 body{
 	font-family: 'Lato', sans-serif;
 }
 
+.bg-img{
+	position: absolute;
+	background-image: url(../img/bg-code_clean_darker.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	width: 100%;
+	z-index: -1;
+}
+
+#bg-code{
+	background-image: url(../img/bg-code_clean.png);
+	background-position: center;
+}
+
+#bg-lines{
+	background-image: url(../img/lines.png);
+	background-position: left;
+}
+
+#bg-code-with-lines{
+	background-image: url(../img/bg-code_with_lines.png);
+	background-position: left;
+}
+
 .lighting-letters{
 	font-family: 'Montserrat', sans-serif;
-	font-weight: 200;
+	font-weight: 100;
 	letter-spacing: -1px;
-    font-size: 4rem;
-    display: none;
+	font-size: 4rem;
+	display: none;
+	color: white;
+	margin-left: auto;
+	// text-shadow: -1px 1px 1px #000, 1px -1px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
+	width: min-content;
+	margin-right: 5rem;
+
+	// @include media-max-lg {
+	// 	width: min-content;
+	// }
+	@include media-max-sm {
+		font-size: 3rem;
+		margin-right: 3rem;
+	}
+	@include media-max-xs {
+		font-size: 2.5rem;
+		font-weight: 200;
+    	// text-shadow: -2px 2px 0px #000;
+		margin-right: 2rem;
+	}
 }
 
 .lighting-letter{

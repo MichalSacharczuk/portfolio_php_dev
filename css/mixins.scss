@@ -1,0 +1,81 @@
+// ********************
+@mixin media-xl{
+	@media (min-width: 1200px){
+		@content;
+	}
+}
+@mixin media-lg{
+	@media (min-width: 992px){
+		@content;
+	}
+}
+@mixin media-md{
+	@media (min-width: 768px){
+		@content;
+	}
+}
+@mixin media-sm{
+	@media (min-width: 576px){
+		@content;
+	}
+}
+// ********************
+@mixin media-max-lg{
+	@media screen and (max-width: 1199px){
+		@content;
+	}
+}
+@mixin media-max-md{
+	@media screen and (max-width: 991px){
+		@content;
+	}
+}
+@mixin media-max-sm{
+	@media screen and (max-width: 767px){
+		@content;
+	}
+}
+@mixin media-max-xs{
+	@media screen and (max-width: 575px){
+		@content;
+	}
+}
+// ********************
+@mixin media-only-lg{
+	@media (min-width: 992px) and (max-width: 1199px){
+		@content;
+	}
+}
+@mixin media-only-md{
+	@media (min-width: 768px) and (max-width: 991px){
+		@content;
+	}
+}
+@mixin media-only-sm{
+	@media (min-width: 576px) and (max-width: 767px){
+		@content;
+	}
+}
+@mixin media-only-xs{
+	@media screen and (max-width: 575px){
+		@content;
+	}
+}
+// ********************
+
+
+@mixin font-size($size: 14px, $min-size: 12px){
+	font-size: $size;
+	@include media-only-lg{
+		font-size: $min-size + ($size - $min-size) * 0.75;
+	}
+	@include media-only-md{
+		font-size: $min-size + ($size - $min-size) * 0.5;
+	}
+	@include media-only-sm{
+		font-size: $min-size + ($size - $min-size) * 0.25;
+	}
+	@include media-only-xs{
+		font-size: $min-size + ($size - $min-size) * 0;
+	}
+}
