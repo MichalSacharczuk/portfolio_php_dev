@@ -157,7 +157,9 @@ button, .btn {
   z-index: 10000 !important; }
 
 body {
-  font-family: 'Lato', sans-serif; }
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300; }
 
 .bg-img {
   position: absolute;
@@ -181,7 +183,7 @@ body {
   background-position: left; }
 
 .lighting-letters {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 100;
   letter-spacing: -1px;
   font-size: 4rem;
@@ -214,9 +216,35 @@ body {
   width: 100%;
   z-index: 1; }
 
+.section {
+  padding: 3rem 0; }
+  .section:nth-of-type(2n+1) {
+    background-color: #F0F2F2; }
+  .section:nth-of-type(2n) {
+    background-color: #38444B;
+    color: #fff; }
+    .section:nth-of-type(2n) h1 {
+      order: 2; }
+  .section h1 {
+    font-weight: 200;
+    font-family: "Montserrat", sans-serif; }
+  .section h1, .section article {
+    padding: 2rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  @media screen and (max-width: 991px) {
+    .section article {
+      padding-left: 2rem;
+      padding-right: 2rem; } }
+
 .vh-minus-nav {
   position: relative;
   height: calc(100vh - 56px);
   margin-top: 56px; }
+
+@media screen and (max-width: 767px) {
+  .nav-item {
+    padding: 1rem 0; } }
 
 /*# sourceMappingURL=main.css.map */

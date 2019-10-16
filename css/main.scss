@@ -3,11 +3,13 @@
 @import "bootstrap_overwrite_classes";
 
 
-//**********
+//*******************************************************
 
 
 body{
-	font-family: 'Lato', sans-serif;
+	font-family: $family-normal;
+	font-size: 1.2rem;
+	font-weight: 300;
 }
 
 .bg-img{
@@ -36,7 +38,7 @@ body{
 }
 
 .lighting-letters{
-	font-family: 'Montserrat', sans-serif;
+	font-family: $family-header;
 	font-weight: 100;
 	letter-spacing: -1px;
 	font-size: 4rem;
@@ -83,10 +85,58 @@ body{
 	// }
 }
 
+.section{
+
+	padding: 3rem 0;
+
+	&:nth-of-type(2n+1) {
+		background-color: $color5;
+	}
+
+	&:nth-of-type(2n) {
+		background-color: $color2;
+		color: #fff;
+
+		h1{
+			order: 2;
+		}
+	}
+
+	h1{
+		font-weight: 200;
+		font-family: $family-header;
+	}
+
+	h1, article{
+		padding: 2rem 4rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	article{
+		@include media-max-md {
+			padding-left: 2rem;
+			padding-right: 2rem;
+		}
+	}
+}
+
 $navbar-height: 56px;
 .vh-minus-nav{
 	position: relative;
 	// height: 100vh;
 	height: calc(100vh - #{$navbar-height});
 	margin-top: $navbar-height;
+}
+
+
+//*******************************************************
+
+
+.nav-item{
+
+	@include media-max-sm {
+		padding: 1rem 0;
+	}
 }
