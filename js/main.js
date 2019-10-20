@@ -8,7 +8,9 @@ addEventListener('load', function () {
 		$ll = $('.lighting-letters');
 		lightingLetters( $ll );
 		$('.navbar-brand').click( lightingLetters );
-	});
+	})
 
-
+	$('#cv-click').click(function () {
+		$('#cv-toggle').slideToggle('fast');
+	})
 })

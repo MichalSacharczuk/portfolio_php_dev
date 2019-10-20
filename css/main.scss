@@ -22,6 +22,10 @@ body{
 	z-index: -1;
 }
 
+.bg-black-rgba{
+	background-color: rgba(0,0,0,0.8);
+}
+
 #bg-code{
 	background-image: url(../img/bg-code_clean.png);
 	background-position: center;
@@ -85,6 +89,34 @@ body{
 	// }
 }
 
+.my-left-navbar{
+	position: fixed;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 30px;
+
+	.cv-font{
+		font-size: 22px;
+		font-weight: 400;
+		font-family: $family-header;
+	}
+
+	#cv-toggle{
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		
+		.cv-font{
+			font-size: 14px;
+		}
+		.cv-link{
+			padding: 0 10px 0 0;
+			text-align: right;
+		}
+	}
+}
+
 .section{
 
 	padding: 3rem 0;
@@ -138,5 +170,13 @@ $navbar-height: 56px;
 
 	@include media-max-sm {
 		padding: 1rem 0;
+	}
+}
+
+.nav-link{
+	color: rgba(255,255,255,.8) !important;
+
+	&:hover{
+		color: rgba(255,255,255,1) !important;
 	}
 }
