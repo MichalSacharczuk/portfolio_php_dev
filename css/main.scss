@@ -23,7 +23,7 @@ body{
 }
 
 .bg-black-rgba{
-	background-color: rgba(0,0,0,0.8);
+	background-color: rgba(0,0,0,0.9);
 }
 
 #bg-code{
@@ -82,11 +82,7 @@ body{
 	top: 0;
 	background-color: $secondary;
 	width: 100%;
-	z-index: 1;
-
-	// * { 
-	// 	color: white;
-	// }
+	z-index: 2;
 }
 
 .my-left-navbar{
@@ -95,11 +91,20 @@ body{
 	top: 50%;
 	transform: translateY(-50%);
 	font-size: 30px;
+	z-index: 1;
 
 	.cv-font{
 		font-size: 22px;
 		font-weight: 400;
 		font-family: $family-header;
+	}
+
+	@include media-max-sm{
+		font-size: 20px;
+
+		.cv-font{
+			font-size: 14px;
+		}
 	}
 
 	#cv-toggle{
@@ -178,5 +183,9 @@ $navbar-height: 56px;
 
 	&:hover{
 		color: rgba(255,255,255,1) !important;
+	}
+
+	@include media-max-sm{
+		padding: .5rem 0.7rem;
 	}
 }

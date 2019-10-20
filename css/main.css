@@ -171,7 +171,7 @@ body {
   z-index: -1; }
 
 .bg-black-rgba {
-  background-color: rgba(0, 0, 0, 0.8); }
+  background-color: rgba(0, 0, 0, 0.9); }
 
 #bg-code {
   background-image: url(../img/bg-code_clean.png);
@@ -217,18 +217,24 @@ body {
   top: 0;
   background-color: #0f0f0f;
   width: 100%;
-  z-index: 1; }
+  z-index: 2; }
 
 .my-left-navbar {
   position: fixed;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 30px; }
+  font-size: 30px;
+  z-index: 1; }
   .my-left-navbar .cv-font {
     font-size: 22px;
     font-weight: 400;
     font-family: "Montserrat", sans-serif; }
+  @media screen and (max-width: 767px) {
+    .my-left-navbar {
+      font-size: 20px; }
+      .my-left-navbar .cv-font {
+        font-size: 14px; } }
   .my-left-navbar #cv-toggle {
     position: absolute;
     top: 100%;
@@ -274,5 +280,8 @@ body {
   color: rgba(255, 255, 255, 0.8) !important; }
   .nav-link:hover {
     color: white !important; }
+  @media screen and (max-width: 767px) {
+    .nav-link {
+      padding: .5rem 0.7rem; } }
 
 /*# sourceMappingURL=main.css.map */
