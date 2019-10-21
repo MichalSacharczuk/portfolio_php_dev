@@ -1,8 +1,5 @@
 @import "mixins";
 
-// $standard-transition-speed-and-timing: 350ms ease;
-// $secondary: #0f0f0f;
-
 
 a{
 	&:hover {
@@ -17,9 +14,9 @@ button.disabled, button:disabled{
 	pointer-events: none;
 }
 
-// h1, h2, h3, .h1, .h2, .h3 {
-// 	font-weight: lighter;
-// }
+h1, h2, h3, .h1, .h2, .h3 {
+	font-weight: lighter;
+}
 
 // .btn:focus, .btn.focus, button:focus, button.focus
 button, .btn {

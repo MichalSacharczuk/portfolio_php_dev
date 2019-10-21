@@ -12,6 +12,7 @@ body{
 	font-weight: 300;
 }
 
+
 .bg-img{
 	position: absolute;
 	background-image: url(../img/bg-code_clean_darker.png);
@@ -70,7 +71,7 @@ body{
 .my-navbar{
 	position: fixed;
 	top: 0;
-	background-color: $secondary;
+	background-color: $color1;
 	width: 100%;
 	height: $navbar-height;
 	z-index: 2;
@@ -121,6 +122,33 @@ body{
 	}
 }
 
+.project{
+
+	margin-bottom: 4rem;
+
+	&:nth-of-type(2n) .project-img-div{
+		@include media-md{
+			order: 2;
+		}
+	}
+
+	img{
+		margin-bottom: 1.5rem;
+		transition: $standard-transition;
+		filter: saturate(0.4);
+		transform: scale(.99);
+
+		&:hover{
+			filter: saturate(1);
+			transform: scale(1);
+		}
+	}
+
+	h3{
+		text-align: center;
+	}
+}
+
 .section{
 
 	padding: 3rem 0;
@@ -142,6 +170,11 @@ body{
 	h1{
 		font-weight: 200;
 		font-family: $family-header;
+
+		@include media-xl{
+			font-weight: 100;
+			font-size: 3.5rem;
+		}
 	}
 
 	h1, article{
@@ -151,7 +184,7 @@ body{
 		justify-content: center;
 	}
 
-	article{
+	article.col{
 		max-width: 700px;
 		@include media-max-md {
 			padding-left: 2rem;

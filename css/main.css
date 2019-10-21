@@ -4,6 +4,9 @@ a:hover {
 button.disabled, button:disabled {
   pointer-events: none; }
 
+h1, h2, h3, .h1, .h2, .h3 {
+  font-weight: lighter; }
+
 button, .btn {
   box-shadow: none !important;
   outline: none !important; }
@@ -244,6 +247,22 @@ body {
   .my-left-navbar .cv-full-width {
     transform: scaleX(1) !important; }
 
+.project {
+  margin-bottom: 4rem; }
+  @media (min-width: 768px) {
+    .project:nth-of-type(2n) .project-img-div {
+      order: 2; } }
+  .project img {
+    margin-bottom: 1.5rem;
+    transition: all 0.25s ease;
+    filter: saturate(0.4);
+    transform: scale(0.99); }
+    .project img:hover {
+      filter: saturate(1);
+      transform: scale(1); }
+  .project h3 {
+    text-align: center; }
+
 .section {
   padding: 3rem 0; }
   .section:nth-of-type(2n+1) {
@@ -257,19 +276,23 @@ body {
   .section h1 {
     font-weight: 200;
     font-family: "Montserrat", sans-serif; }
+    @media (min-width: 1200px) {
+      .section h1 {
+        font-weight: 100;
+        font-size: 3.5rem; } }
   .section h1, .section article {
     padding: 2rem 4rem;
     display: flex;
     align-items: center;
     justify-content: center; }
-  .section article {
+  .section article.col {
     max-width: 700px; }
     @media screen and (max-width: 991px) {
-      .section article {
+      .section article.col {
         padding-left: 2rem;
         padding-right: 2rem; } }
     @media screen and (max-width: 767px) {
-      .section article {
+      .section article.col {
         font-size: 1.1rem;
         order: 12; } }
   .section .section-bg {
