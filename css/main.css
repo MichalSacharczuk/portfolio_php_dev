@@ -274,7 +274,8 @@ body {
         order: 12; } }
   .section .section-bg {
     background-image: url(../img/lines_bg.png);
-    background-size: cover; }
+    background-size: cover;
+    background-position: center; }
 
 .vh-minus-nav {
   position: relative;
