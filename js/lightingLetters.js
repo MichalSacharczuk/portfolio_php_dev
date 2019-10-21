@@ -90,7 +90,7 @@ function lightingLetters(lightingLetters) {
 		if ( lettersVisible >= $ll.length || time > intervalTime * 100 ) {
 			clearInterval(lightingLettersInterval);
 			joinLetters($lls);
-			console.log( 'interval cleared' );
+			console.log( 'lightingLetters interval cleared' );
 		}
 
 	}, intervalTime);
