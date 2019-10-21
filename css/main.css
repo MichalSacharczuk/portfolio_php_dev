@@ -237,13 +237,19 @@ body {
         font-size: 14px; } }
   .my-left-navbar #cv-toggle {
     position: absolute;
-    top: 100%;
-    width: 100%; }
+    top: 0;
+    left: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.25s ease; }
     .my-left-navbar #cv-toggle .cv-font {
       font-size: 14px; }
-    .my-left-navbar #cv-toggle .cv-link {
-      padding: 0 10px 0 0;
-      text-align: right; }
+      @media screen and (max-width: 767px) {
+        .my-left-navbar #cv-toggle .cv-font {
+          font-size: 12px; } }
+  .my-left-navbar .cv-full-width {
+    transform: scaleX(1) !important; }
 
 .section {
   padding: 3rem 0; }
@@ -266,11 +272,15 @@ body {
     .section article {
       padding-left: 2rem;
       padding-right: 2rem; } }
+  @media screen and (max-width: 767px) {
+    .section article {
+      font-size: 1.1rem;
+      order: 12; } }
 
 .vh-minus-nav {
   position: relative;
-  height: calc(100vh - 56px);
-  margin-top: 56px; }
+  height: calc(100vh - 60px);
+  margin-top: 60px; }
 
 @media screen and (max-width: 767px) {
   .nav-item {

@@ -11,6 +11,6 @@ addEventListener('load', function () {
 	})
 
 	$('#cv-click').click(function () {
-		$('#cv-toggle').slideToggle('fast');
+		$('#cv-toggle').toggleClass('cv-full-width');
 	})
 })

@@ -5,6 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Michał Sacharczuk Portfolio</title>
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900|Montserrat:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 	<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
@@ -64,23 +66,21 @@
 				<i class="fa fa-linkedin" aria-hidden="true"></i>
 			</a>
 		</div>
-		<div class="py-2 d-flex">
+		<div class="py-2 relative">
 			<div id="cv-click">
 				<div class="nav-link c-pointer">
 					<span class="cv-font">CV</span>
 				</div>
 			</div>
-		</div>
-		<div id="cv-toggle" class="bg-black-rgba" style="display: none">
-			<div>
-				<a href="pdf/CV-Michal_Sacharczuk-PL.pdf" class="nav-link cv-link" target="blank">
-					<span class="cv-font">PL</span>
-				</a>
-			</div>
-			<div>
-				<a href="pdf/CV-Michal_Sacharczuk-EN.pdf" class="nav-link cv-link pb-2" target="blank">
-					<span class="cv-font">EN</span>
-				</a>
+			<div id="cv-toggle" class="bg-black-rgba">
+				<div class="d-flex h-100 align-items-center">
+					<a href="pdf/CV-Michal_Sacharczuk-PHP_developer-PL.pdf" class="nav-link cv-font" target="blank">
+						PL
+					</a>
+					<a href="pdf/CV-Michal_Sacharczuk-PHP_developer-EN.pdf" class="nav-link cv-font" target="blank">
+						EN
+					</a>
+				</div>
 			</div>
 		</div>
 
@@ -89,8 +89,6 @@
 </nav>
 
 <header class="vh-minus-nav">
-	<!-- <div id="bg-code" class="bg-img"></div> -->
-	<!-- <div id="bg-lines" class="bg-img"></div> -->
 	<div id="bg-code-with-lines" class="bg-img"></div>
 	<h1>
 		<div class="text-right pt-5">

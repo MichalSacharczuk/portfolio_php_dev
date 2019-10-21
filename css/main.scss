@@ -109,16 +109,24 @@ body{
 
 	#cv-toggle{
 		position: absolute;
-		top: 100%;
-		width: 100%;
+		top: 0;
+		left: 100%;
+		height: 100%;
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: all 0.25s ease;
 		
 		.cv-font{
 			font-size: 14px;
+
+			@include media-max-sm{
+				font-size: 12px;
+			}
 		}
-		.cv-link{
-			padding: 0 10px 0 0;
-			text-align: right;
-		}
+	}
+
+	.cv-full-width{
+		transform: scaleX(1) !important;
 	}
 }
 
@@ -156,10 +164,14 @@ body{
 			padding-left: 2rem;
 			padding-right: 2rem;
 		}
+		@include media-max-sm {
+			font-size: 1.1rem;
+			order: 12;
+		}
 	}
 }
 
-$navbar-height: 56px;
+$navbar-height: 60px;
 .vh-minus-nav{
 	position: relative;
 	// height: 100vh;
