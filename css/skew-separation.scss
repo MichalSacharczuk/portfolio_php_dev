@@ -1,0 +1,30 @@
+
+$skew-angle: 3deg;
+$skew-tan: tan($skew-angle);
+$skew-height: calc( 100vw * #{$skew-tan} );
+$skew-half-height: calc( #{$skew-height} * 0.5 );
+
+
+.skew-border{
+	position: absolute;
+	width: 100%;
+	height: $skew-height;
+	background: $color2;
+
+	&::after{
+		content: ' ';
+		display: block;
+		width: 100%;
+		height: $skew-height;
+		background: $color5;
+		transform: skewY($skew-angle) translateY($skew-half-height);
+	}
+
+	&:nth-of-type(2n){
+		background: $color5;
+		
+		&::after{
+			background: $color2;
+		}
+	}
+}

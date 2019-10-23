@@ -1,3 +1,20 @@
+.skew-border {
+  position: absolute;
+  width: 100%;
+  height: calc( 100vw * 0.05241 );
+  background: #0f0f0f; }
+  .skew-border::after {
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: calc( 100vw * 0.05241 );
+    background: #38444B;
+    transform: skewY(3deg) translateY(calc( calc( 100vw * 0.05241 ) * 0.5 )); }
+  .skew-border:nth-of-type(2n) {
+    background: #38444B; }
+    .skew-border:nth-of-type(2n)::after {
+      background: #0f0f0f; }
+
 a:hover {
   text-decoration: none; }
 
@@ -298,7 +315,9 @@ body {
   .section .section-bg {
     background-image: url(../img/lines_bg.png);
     background-size: cover;
-    background-position: center; }
+    background-position: center;
+    position: relative;
+    padding-top: calc( 100vw * 0.05241 ); }
 
 .vh-minus-nav {
   position: relative;

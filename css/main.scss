@@ -1,5 +1,7 @@
 @import "variables";
+@import "calculator";
 @import "mixins";
+@import "skew-separation";
 @import "bootstrap_overwrite_classes";
 
 
@@ -200,6 +202,8 @@ body{
 		background-image: url(../img/lines_bg.png);
 		background-size: cover;
 		background-position: center;
+		position: relative;
+		padding-top: $skew_height;
 	}
 }
 
