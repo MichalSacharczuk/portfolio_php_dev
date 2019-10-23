@@ -12,6 +12,10 @@ body{
 	font-family: $family-normal;
 	font-size: 1.2rem;
 	font-weight: 300;
+
+	@include media-max-sm{
+		font-size: 1.1rem;
+	}
 }
 
 
@@ -75,8 +79,13 @@ body{
 	top: 0;
 	background-color: $color1;
 	width: 100%;
-	height: $navbar-height;
 	z-index: 2;
+
+	// tak aby heigt dla md i sm był taki sam
+	@include media-max-sm{
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
 }
 
 .my-left-navbar{
@@ -124,9 +133,20 @@ body{
 	}
 }
 
+.navbar-brand{
+
+	@include media-max-sm{
+		font-size: 1.1rem;
+	}
+}
+
 .project{
 
 	margin-bottom: 4rem;
+
+	&:last-of-type{
+		margin-bottom: 0;
+	}
 
 	&:nth-of-type(2n) .project-img-div{
 		@include media-md{
@@ -154,10 +174,14 @@ body{
 .section{
 
 	padding: 3rem 0;
+	
+	@include media-max-sm{
+		padding: 0;
+	}
 
 	&:nth-of-type(2n+1) {
 		background-color: $color5;
-						color: #fff; // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		color: #fff;
 	}
 
 	&:nth-of-type(2n) {
@@ -193,8 +217,8 @@ body{
 			padding-right: 2rem;
 		}
 		@include media-max-sm {
-			font-size: 1.1rem;
 			order: 12;
+			padding-top: 0;
 		}
 	}
 
